@@ -1,22 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<title>Conecta 4</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Conecta 4</title>
 </head>
+
 <body>
-  <header>
-      <nav id=nav class="navbar navbar-expand bg-secondary ">
+  <!-- <header>
+      <nav id=nav class="navbar navbar-expand">
         <a class="navbar-brand" href="#">
           <img class= "m-2 ml-5" width="100" alt=" 4 en Linea" src="../assets/logo conecta 4.png">
         </a>
-        <div>
           <h1 id="titulo">{{title}}</h1>
-        </div>
       </nav>
-  </header>
+  </header> -->
+
+  <!-- HEADER -->
+  <div class="container" style="border: 1px solid black; margin-bottom: 30px;">
+    <div class="row">
+      <div class="col-4">
+        <img src="assets/logo.png" style="width: 100px; float: left; padding-top: 10px; padding-bottom: 10px;" alt="">
+      </div>
+      <div class="col-4">
+        <h1 style="text-align:center; padding-top: 10px;"> Juego Conecta 4</h1>
+      </div>
+      <div class="col-4">
+        <img src="assets/logo.png" style="width: 100px; float: right; padding-top: 10px; padding-bottom: 10px;" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- FIN HEADER -->
+
+  <!-- BODY -->
+  <div class="container" style=" margin-bottom: 30px;">
+    <div class="row">
 
 
+      <!-- PARTE IZQUIERDA -->
+      <div class="col-5">
+        <!-- RECUADRO CON BOTONES Y JUGADORES -->
+        <div style="border: 1px solid black; padding: 25px;">
+          <!-- BOTONES -->
+          <div class="container" style="padding-bottom:30px">
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-primary" style="float: right;">Nuevo Juego</button>
+              </div>
+              <div class="col">
+                <button type="button" class="btn btn-primary" style="float: left;">Comenzar</button>
+              </div>
+            </div>
+          </div>
+          <!-- JUGADOR 1 -->
+          <div class="col">
+            <h4>Jugador/a 1: </h4>
+            <div><input type="text"> <img src="assets/rojo.png" style="width: 50px;" alt=""></div>
+          </div>
+          <!-- JUGADOR 2 -->
+          <div class="col">
+            <h4>Jugador/a 2: </h4>
+            <div><input type="text"> <img src="assets/azul.png" style="width: 50px;" alt=""></div>
+          </div>
+        </div>
+        <!-- FIN RECUADRO CON BOTONES Y JUGADORES -->
+
+
+        <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
+        <h2>Mensajes:</h2>
+        <div style="padding: 50px; border: 1px solid black">
+          <p style="color:blue;"><b>Aquí aparecerán los mensajes del juego.</b></p>
+        </div>
+        <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
+      </div>
+      <!-- FIN PARTE IZQUIERDA -->
+
+
+
+      <!-- PARTE DERECHA -->
+      <div class="col-7">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-primary">1</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">2</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">3</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">4</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">5</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">6</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">7</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- FIN BODY -->
+
+  <h3 style="text-align:center ;">Estudiantes: Ignacio Baeza / Ismael Miranda - Desarrollo Frontend con Angular (2022)
+  </h3>
 </body>
+
 </html>
