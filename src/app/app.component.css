@@ -3,6 +3,7 @@ header{
 }
 tbody{
     background-color: rgb(137, 137, 137);
+    border: 1px solid black;
 }
 
 .vacio{
@@ -37,16 +38,18 @@ tbody{
 
 .rojo-gana{
     background-color: rgb(255, 0, 0);
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
+    margin: 5px;
     border: 5px solid yellow;
     border-radius: 50%;
 }
 
 .azul-gana{
     background-color: blue;
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
+    margin: 5px;
     border: 5px solid yellow;
     border-radius: 50%;
 }
