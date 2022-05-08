@@ -80,52 +80,40 @@
 
       <!-- PARTE DERECHA -->
       <div class="col-7">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-primary">1</button>
-            </div>
-            <div class="col">
+        <table class="table-responsive">
+        <thead >
+          <tr class="row">
+            <th><button type="button" class="btn btn-primary">1</button>
               <button type="button" class="btn btn-primary">2</button>
-            </div>
-            <div class="col">
               <button type="button" class="btn btn-primary">3</button>
-            </div>
-            <div class="col">
               <button type="button" class="btn btn-primary">4</button>
-            </div>
-            <div class="col">
               <button type="button" class="btn btn-primary">5</button>
-            </div>
-            <div class="col">
               <button type="button" class="btn btn-primary">6</button>
-            </div>
-            <div class="col">
               <button type="button" class="btn btn-primary">7</button>
-            </div>
-          </div>
-            <tbody class=" row">
-                <tr *ngFor="let fila of filas; index as i">
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-
-                  
-          
+            
+            </th>
+            
+          </tr>
+        </thead>
+            <tbody>
+                <tr  class="row" *ngFor="let fila of filas; index as i" style="margin: auto">
+                  <td ></td>
+                  <td></td>
+                  <td ></td>
+                  <td ></td>
+                  <td ></td>
+                  <td ></td>
+                  <td></td>
 
                 </tr>
             </tbody>
     
-
+        </table>
         </div>
       </div>
 
     </div>
-  </div>
+  
   <!-- FIN BODY -->
 
   <h3 style="text-align:center ;">Estudiantes: Ignacio Baeza / Ismael Miranda - Desarrollo Frontend con Angular (2022)
