@@ -29,7 +29,6 @@ export class AppComponent {
   nombreJugador2:string = "Ismael";
 
   title = 'Conecta 4';
-<<<<<<< HEAD
   filas: number[] = [0, 1, 2, 3, 4, 5];
   columnas: number[] = [0, 1, 2, 3, 4, 5, 6];
 
@@ -38,18 +37,21 @@ export class AppComponent {
 
   filasTotales: number = this.filas.length-1;
 
-  click(col: number): void {
-    var filaALlenar: number = this.filasTotales;
-    do{
-      if (this.tablero[filaALlenar][col] == 'vacio') {
-        this.tablero[filaALlenar][col] = this.turno ? 'rojo': 'azul';
-        this.turno = !this.turno;
-        this.mensaje="Es turno de " + (this.turno ? this.nombreJugador1: this.nombreJugador2);
-        var hayGanador: boolean = this.hayGanador(filaALlenar,col);
-        filaALlenar=-1;
-      }
-      filaALlenar--;
-    }while(filaALlenar>=0);
+  jugarFicha(col: number): void {
+    if(this.juegoIniciado){
+      var filaALlenar: number = this.filasTotales;
+      do{
+        if (this.tablero[filaALlenar][col] == 'vacio') {
+          this.tablero[filaALlenar][col] = this.turno ? 'rojo': 'azul';
+          this.turno = !this.turno;
+          this.mensaje="Jugador " + (this.turno ? this.nombreJugador1: this.nombreJugador2) + " es tu turno.";
+          var hayGanador: boolean = this.hayGanador(filaALlenar,col);
+          filaALlenar=-1;
+        }
+        filaALlenar--;
+      }while(filaALlenar>=0);
+    }
+
   }
 
   hayGanador(fila:number, columna:number): boolean{
@@ -57,13 +59,36 @@ export class AppComponent {
   }
 
   comenzarJuego(){
-    this.juegoIniciado=true;
-    this.nombreJugador1 = (<HTMLInputElement>document.getElementById("nJugador1")).value;
-    this.nombreJugador2 = (<HTMLInputElement>document.getElementById("nJugador2")).value;
-    this.mensaje="Es turno de " + (this.turno ? this.nombreJugador1: this.nombreJugador2);
+    if((<HTMLInputElement>document.getElementById("nJugador1")).value != "" && (<HTMLInputElement>document.getElementById("nJugador2")).value !=""){
+      this.mensaje="aad";
+      this.juegoIniciado=true;
+      this.turno = (Math.round(Math.random()*1)) == 1 ? true:false;
+      this.nombreJugador1 = (<HTMLInputElement>document.getElementById("nJugador1")).value;
+      this.nombreJugador2 = (<HTMLInputElement>document.getElementById("nJugador2")).value;
+      this.mensaje="Jugador " + (this.turno ? this.nombreJugador1: this.nombreJugador2) + " es tu turno.";
+    }else{
+      this.mensaje="Ingrese los nombres antes de comenzar!"
+    }
   }
 
-=======
-  filas: Array<string> = ["", "", "","","",""];
->>>>>>> 7c7cf0a55fcf32cf2d3ca19990938e49dfc70823
+  nuevoJuego():void{
+    this.tablero = [
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+  
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+  
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+  
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+  
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+      
+      ["vacio", "vacio", "vacio", "vacio", "vacio", "vacio", "vacio"],
+    ];
+    
+    this.juegoIniciado = false;
+    (<HTMLInputElement>document.getElementById("nJugador1")).value="";
+    (<HTMLInputElement>document.getElementById("nJugador2")).value="";
+    this.mensaje="Luego de escribir los nombres da click a 'Comenzar' para jugar."
+  }
 }

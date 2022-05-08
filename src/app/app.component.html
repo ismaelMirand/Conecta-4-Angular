@@ -7,145 +7,124 @@
   <title>Conecta 4</title>
 </head>
 
-<body>
-  <!-- <header>
-      <nav id=nav class="navbar navbar-expand">
-        <a class="navbar-brand" href="#">
-          <img class= "m-2 ml-5" width="100" alt=" 4 en Linea" src="../assets/logo conecta 4.png">
-        </a>
-          <h1 id="titulo">{{title}}</h1>
-      </nav>
-  </header> -->
+<html>
+<!-- BODY -->
 
-  <!-- HEADER -->
-  <div class="container" style="border: 1px solid black; margin-bottom: 30px;">
-    <div class="row">
-      <div class="col-4">
-        <img src="assets/logo.png" style="width: 100px; float: left; padding-top: 10px; padding-bottom: 10px;" alt="">
-      </div>
-      <div class="col-4">
-        <h1 style="text-align:center; padding-top: 10px;"> Juego Conecta 4</h1>
-      </div>
-      <div class="col-4">
-        <img src="assets/logo.png" style="width: 100px; float: right; padding-top: 10px; padding-bottom: 10px;" alt="">
+<body class="container">
+
+  <header>
+    <!-- HEADER -->
+    <div class="container" id="contenedor-header">
+      <div class="row">
+        <div class="col-4">
+          <img src="assets/logo.png" class="imagenIzquierda" alt="">
+        </div>
+        <div class="col-4">
+          <h1 style="text-align:center; padding-top: 10px;"> Juego Conecta 4</h1>
+        </div>
+        <div class="col-4">
+          <img src="assets/logo.png" class="imagenDerecha" alt="">
+        </div>
       </div>
     </div>
-  </div>
+  </header>
   <!-- FIN HEADER -->
 
-  <!-- BODY -->
-  <div class="container" style=" margin-bottom: 30px;">
-    <div class="row">
+  <div class="row">
 
 
-      <!-- PARTE IZQUIERDA -->
-      <div class="col-5">
-        <!-- RECUADRO CON BOTONES Y JUGADORES -->
-        <div style="border: 1px solid black; padding: 25px;">
-          <!-- BOTONES -->
-          <div class="container" style="padding-bottom:30px">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-secondary" style="float: right;">Nuevo Juego</button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-secondary" style="float: left;" (click)="comenzarJuego()">Comenzar</button>
-              </div>
+    <!-- PARTE IZQUIERDA -->
+    <div class="col-5">
+      <!-- RECUADRO CON BOTONES Y JUGADORES -->
+      <div class="contenedor-botones">
+        <!-- BOTONES -->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-secondary" id="botonIzquierdo" (click)="nuevoJuego();" >Nuevo
+                Juego</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-secondary" id="botonDerecho"
+                (click)="comenzarJuego()">Comenzar</button>
             </div>
           </div>
-          <!-- JUGADOR 1 -->
-          <div class="col">
-            <h4>Jugador/a 1: </h4>
-            <div><input id="nJugador1" type="text"> <img src="assets/rojo.png" style="width: 50px;" alt=""></div>
-          </div>
-          <!-- JUGADOR 2 -->
-          <div class="col">
-            <h4>Jugador/a 2: </h4>
-            <div><input id="nJugador2" type="text"> <img src="assets/azul.png" style="width: 50px;" alt=""></div>
+        </div>
+        <!-- JUGADOR 1 -->
+        <div class="col">
+          <h4>Jugador/a 1: </h4>
+          <div class="row">
+            <div class="col-4">
+              <input id="nJugador1" type="text" class="input">
+            </div>
+            <div class="col-1">
+              <div id="fichaRoja"></div>
+            </div>
           </div>
         </div>
-        <!-- FIN RECUADRO CON BOTONES Y JUGADORES -->
-
-
-        <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
-        <h2>Mensajes:</h2>
-        <div style="padding: 50px; border: 1px solid black">
-          <p style="color:blue;"><b>{{mensaje}}</b></p>
+        <!-- JUGADOR 2 -->
+        <div class="col">
+          <h4>Jugador/a 2: </h4>
+          <div class="row">
+            <div class="col-4">
+              <input id="nJugador2" type="text" class="input">
+            </div>
+            <div class="col-1">
+              <div id="fichaAzul"></div>
+            </div>
+          </div>
         </div>
-        <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
       </div>
-      <!-- FIN PARTE IZQUIERDA -->
+      <!-- FIN RECUADRO CON BOTONES Y JUGADORES -->
+
+      <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
+      <h2>Mensajes:</h2>
+      <div id="contenedor-mensaje">
+        <p><b>{{mensaje}}</b></p>
+      </div>
+      <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
+    </div>
+    <!-- FIN PARTE IZQUIERDA -->
 
 
 
-      <!-- PARTE DERECHA -->
-<<<<<<< HEAD
-      <div class="col-7" >
-        <table>
-          <thead>
-            <tr>
-              <th><button type="button" class="btn btn-primary" (click)="click(0);">1</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(1);">2</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(2);">3</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(3);">4</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(4);">5</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(5);">6</button></th>
-              <th><button type="button" class="btn btn-primary" (click)="click(6);">7</button></th>
-            </tr>
-          </thead>
-          <!-- TABLERO -->
-          <tbody >
-            <tr *ngFor="let f of filas">
-              <td *ngFor="let c of columnas">
-                <div *ngIf="tablero[f][c]=='vacio'" class="vacio"></div>
-                <div *ngIf="tablero[f][c]=='rojo'" class="rojo"></div>
-                <div *ngIf="tablero[f][c]=='azul'" class="azul"></div>
-              </td>    
-            </tr>         
-          </tbody>
-          <!-- FIN TABLERO -->
-        </table>
-=======
-      <div class="col-7">
-        <table class="table-responsive">
-        <thead >
-          <tr class="row">
-            <th><button type="button" class="btn btn-primary">1</button>
-              <button type="button" class="btn btn-primary">2</button>
-              <button type="button" class="btn btn-primary">3</button>
-              <button type="button" class="btn btn-primary">4</button>
-              <button type="button" class="btn btn-primary">5</button>
-              <button type="button" class="btn btn-primary">6</button>
-              <button type="button" class="btn btn-primary">7</button>
-            
-            </th>
-            
+    <!-- PARTE DERECHA -->
+    <div class="col-7">
+      <table>
+        <thead>
+          <tr>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(0);">1</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(1);">2</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(2);">3</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(3);">4</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(4);">5</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(5);">6</button></th>
+            <th><button type="button" class="btn btn-primary" (click)="jugarFicha(6);">7</button></th>
           </tr>
         </thead>
-            <tbody>
-                <tr  class="row" *ngFor="let fila of filas; index as i" style="margin: auto">
-                  <td ></td>
-                  <td></td>
-                  <td ></td>
-                  <td ></td>
-                  <td ></td>
-                  <td ></td>
-                  <td></td>
-
-                </tr>
-            </tbody>
-    
-        </table>
-        </div>
->>>>>>> 7c7cf0a55fcf32cf2d3ca19990938e49dfc70823
-      </div>
-
+        <!-- TABLERO -->
+        <tbody>
+          <tr *ngFor="let f of filas">
+            <td *ngFor="let c of columnas">
+              <div *ngIf="tablero[f][c]=='vacio'" class="vacio"></div>
+              <div *ngIf="tablero[f][c]=='rojo'" class="rojo"></div>
+              <div *ngIf="tablero[f][c]=='azul'" class="azul"></div>
+            </td>
+          </tr>
+        </tbody>
+        <!-- FIN TABLERO -->
+      </table>
     </div>
-  
+
+  </div>
+
   <!-- FIN BODY -->
 
-  <h3 style="text-align:center ;">Estudiantes: Ignacio Baeza / Ismael Miranda - Desarrollo Frontend con Angular (2022)
-  </h3>
+  <!-- FOOTER -->
+  <footer class="alert alert-dark">
+    <h3>Estudiantes: Ignacio Baeza / Ismael Miranda - Desarrollo Frontend con Angular (2022)</h3>
+  </footer>
+  <!-- FIN FOOTER -->
 </body>
 
 </html>
