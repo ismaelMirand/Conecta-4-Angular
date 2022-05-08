@@ -1,4 +1,5 @@
 body{
+<<<<<<< HEAD
     padding-top: 40px;
 }
 
@@ -41,3 +42,26 @@ tbody{
     border: 5px solid yellow;
     border-radius: 50%;
 }
+=======
+   
+}
+
+
+td{
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    margin:5px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+button{
+   margin:5px 28px;
+
+}
+tbody{
+   
+    background-color: blue;
+}
+
+>>>>>>> 7c7cf0a55fcf32cf2d3ca19990938e49dfc70823

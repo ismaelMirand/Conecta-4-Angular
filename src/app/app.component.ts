@@ -29,6 +29,7 @@ export class AppComponent {
   nombreJugador2:string = "Ismael";
 
   title = 'Conecta 4';
+<<<<<<< HEAD
   filas: number[] = [0, 1, 2, 3, 4, 5];
   columnas: number[] = [0, 1, 2, 3, 4, 5, 6];
 
@@ -62,4 +63,7 @@ export class AppComponent {
     this.mensaje="Es turno de " + (this.turno ? this.nombreJugador1: this.nombreJugador2);
   }
 
+=======
+  filas: Array<string> = ["", "", "","","",""];
+>>>>>>> 7c7cf0a55fcf32cf2d3ca19990938e49dfc70823
 }
