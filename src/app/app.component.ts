@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ComponentFactoryResolver } from '@angular/core';
 
 
 @Component({
@@ -45,7 +45,7 @@ export class AppComponent {
           this.tablero[filaALlenar][col] = this.turno ? 'rojo': 'azul';
           this.turno = !this.turno;
           this.mensaje="Jugador " + (this.turno ? this.nombreJugador1: this.nombreJugador2) + " es tu turno.";
-          var hayGanador: boolean = this.hayGanador(filaALlenar,col);
+          var hayGanador: boolean = this.hayGanador();
           filaALlenar=-1;
         }
         filaALlenar--;
@@ -54,13 +54,33 @@ export class AppComponent {
 
   }
 
-  hayGanador(fila:number, columna:number): boolean{
-      return true;
+  hayGanador(): boolean{
+      for(let fila = 0; fila <= this.filasTotales; fila++){
+        for(let columna = 0; columna < (this.columnas.length-3); columna++){
+          console.log("fila: " + fila);
+          console.log("columna: " + columna);
+
+          if(this.tablero[fila][columna] !='vacio'){
+            // console.log("this.tablero[fila][columna]: "+ this.tablero[fila][columna]);
+            if(this.tablero[fila][columna] == this.tablero[fila][columna+1] && this.tablero[fila][columna+1] == this.tablero[fila][columna+2] && this.tablero[fila][columna+2] == this.tablero[fila][columna+3]){
+              // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila][columna+1] + "==" +  this.tablero[fila][columna+2] +"=="+ this.tablero[fila][columna+3]);
+              //Si entra acá es porque hay ganador
+              var colorGanador = this.turno ? 'azulg': 'rojog';
+              this.tablero[fila][columna] =colorGanador;
+              this.tablero[fila][columna+1] =colorGanador;
+              this.tablero[fila][columna+2] =colorGanador;
+              this.tablero[fila][columna+3] =colorGanador;
+              this.mensaje = "El ganador es " + (this.turno ? this.nombreJugador2: this.nombreJugador1);
+              this.juegoIniciado=false;
+            }
+          }
+        }
+      }
+      return false;
   }
 
   comenzarJuego(){
     if((<HTMLInputElement>document.getElementById("nJugador1")).value != "" && (<HTMLInputElement>document.getElementById("nJugador2")).value !=""){
-      this.mensaje="aad";
       this.juegoIniciado=true;
       this.turno = (Math.round(Math.random()*1)) == 1 ? true:false;
       this.nombreJugador1 = (<HTMLInputElement>document.getElementById("nJugador1")).value;
@@ -91,4 +111,5 @@ export class AppComponent {
     (<HTMLInputElement>document.getElementById("nJugador2")).value="";
     this.mensaje="Luego de escribir los nombres da click a 'Comenzar' para jugar."
   }
+
 }
