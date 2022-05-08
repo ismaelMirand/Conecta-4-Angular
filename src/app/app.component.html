@@ -46,22 +46,22 @@
           <div class="container" style="padding-bottom:30px">
             <div class="row">
               <div class="col">
-                <button type="button" class="btn btn-primary" style="float: right;">Nuevo Juego</button>
+                <button type="button" class="btn btn-secondary" style="float: right;">Nuevo Juego</button>
               </div>
               <div class="col">
-                <button type="button" class="btn btn-primary" style="float: left;">Comenzar</button>
+                <button type="button" class="btn btn-secondary" style="float: left;" (click)="comenzarJuego()">Comenzar</button>
               </div>
             </div>
           </div>
           <!-- JUGADOR 1 -->
           <div class="col">
             <h4>Jugador/a 1: </h4>
-            <div><input type="text"> <img src="assets/rojo.png" style="width: 50px;" alt=""></div>
+            <div><input id="nJugador1" type="text"> <img src="assets/rojo.png" style="width: 50px;" alt=""></div>
           </div>
           <!-- JUGADOR 2 -->
           <div class="col">
             <h4>Jugador/a 2: </h4>
-            <div><input type="text"> <img src="assets/azul.png" style="width: 50px;" alt=""></div>
+            <div><input id="nJugador2" type="text"> <img src="assets/azul.png" style="width: 50px;" alt=""></div>
           </div>
         </div>
         <!-- FIN RECUADRO CON BOTONES Y JUGADORES -->
@@ -70,7 +70,7 @@
         <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
         <h2>Mensajes:</h2>
         <div style="padding: 50px; border: 1px solid black">
-          <p style="color:blue;"><b>Aquí aparecerán los mensajes del juego.</b></p>
+          <p style="color:blue;"><b>{{mensaje}}</b></p>
         </div>
         <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
       </div>
@@ -79,49 +79,31 @@
 
 
       <!-- PARTE DERECHA -->
-      <div class="col-7">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-primary">1</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">2</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">3</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">4</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">5</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">6</button>
-            </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">7</button>
-            </div>
-          </div>
-            <tbody class=" row">
-                <tr *ngFor="let fila of filas; index as i">
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-                  <td class="col"></td>
-
-                  
-          
-
-                </tr>
-            </tbody>
-    
-
-        </div>
+      <div class="col-7" >
+        <table>
+          <thead>
+            <tr>
+              <th><button type="button" class="btn btn-primary" (click)="click(0);">1</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(1);">2</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(2);">3</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(3);">4</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(4);">5</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(5);">6</button></th>
+              <th><button type="button" class="btn btn-primary" (click)="click(6);">7</button></th>
+            </tr>
+          </thead>
+          <!-- TABLERO -->
+          <tbody >
+            <tr *ngFor="let f of filas">
+              <td *ngFor="let c of columnas">
+                <div *ngIf="tablero[f][c]=='vacio'" class="vacio"></div>
+                <div *ngIf="tablero[f][c]=='rojo'" class="rojo"></div>
+                <div *ngIf="tablero[f][c]=='azul'" class="azul"></div>
+              </td>    
+            </tr>         
+          </tbody>
+          <!-- FIN TABLERO -->
+        </table>
       </div>
 
     </div>
