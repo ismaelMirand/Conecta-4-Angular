@@ -55,7 +55,6 @@ export class AppComponent {
   }
 
   hayGanador(): boolean {
-
     //Verifica si hay ganador horizontalmente
     for (let fila = 0; fila <= this.filasTotales; fila++) {
       for (let columna = 0; columna < this.columnas.length - 3; columna++) {
@@ -66,7 +65,8 @@ export class AppComponent {
           // console.log("this.tablero[fila][columna]: "+ this.tablero[fila][columna]);
           if (
             this.tablero[fila][columna] == this.tablero[fila][columna + 1] &&
-            this.tablero[fila][columna + 1] == this.tablero[fila][columna + 2] &&
+            this.tablero[fila][columna + 1] ==
+              this.tablero[fila][columna + 2] &&
             this.tablero[fila][columna + 2] == this.tablero[fila][columna + 3]
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila][columna+1] + "==" +  this.tablero[fila][columna+2] +"=="+ this.tablero[fila][columna+3]);
@@ -85,26 +85,27 @@ export class AppComponent {
       }
     }
 
-  //Verifica si hay ganador verticalmente
+    //Verifica si hay ganador verticalmente
     for (let columna = 0; columna < this.columnas.length; columna++) {
-      for (let fila = 0; fila <= this.filasTotales -3 ; fila++) {
+      for (let fila = 0; fila <= this.filasTotales - 3; fila++) {
         //console.log('fila: ' + fila);
         //console.log('columna: ' + columna);
 
         if (this.tablero[fila][columna] != 'vacio') {
           // console.log("this.tablero[fila][columna]: "+ this.tablero[fila][columna]);
           if (
-            this.tablero[fila][columna] == this.tablero[fila+1][columna] &&
-            this.tablero[fila+1][columna] == this.tablero[fila+2][columna] &&
-            this.tablero[fila+2][columna] == this.tablero[fila+3][columna]
+            this.tablero[fila][columna] == this.tablero[fila + 1][columna] &&
+            this.tablero[fila + 1][columna] ==
+              this.tablero[fila + 2][columna] &&
+            this.tablero[fila + 2][columna] == this.tablero[fila + 3][columna]
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila][columna+1] + "==" +  this.tablero[fila][columna+2] +"=="+ this.tablero[fila][columna+3]);
             //Si entra acá es porque hay ganador
             var colorGanador = this.turno ? 'azulg' : 'rojog';
             this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila+1][columna] = colorGanador;
-            this.tablero[fila+2][columna] = colorGanador;
-            this.tablero[fila+3][columna] = colorGanador;
+            this.tablero[fila + 1][columna] = colorGanador;
+            this.tablero[fila + 2][columna] = colorGanador;
+            this.tablero[fila + 3][columna] = colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -114,59 +115,60 @@ export class AppComponent {
       }
     }
     //Verifica si hay ganador diagonalmente
-    for (let columna = 0; columna < this.columnas.length; columna++) {
-      for (let fila = 0; fila <= this.filasTotales-3; fila++) {
-        console.log('fila: ' + fila);
-        console.log('columna: ' + columna);
+    for (let columna = 0; columna < this.columnas.length-3; columna++) {
+      for (let fila = 0; fila <= this.filasTotales - 3; fila++) {
+        // console.log('fila: ' + fila);
+        // console.log('columna: ' + columna);
 
         if (this.tablero[fila][columna] != 'vacio') {
           // console.log("this.tablero[fila][columna]: "+ this.tablero[fila][columna]);
           if (
-            this.tablero[fila][columna] == this.tablero[fila+1][columna+1] &&
-            this.tablero[fila+1][columna+1] == this.tablero[fila+2][columna+2] &&
-            this.tablero[fila+2][columna+2] == this.tablero[fila+3][columna+3]
+            this.tablero[fila][columna] ==
+              this.tablero[fila + 1][columna + 1] &&
+            this.tablero[fila + 1][columna + 1] ==
+              this.tablero[fila + 2][columna + 2] &&
+            this.tablero[fila + 2][columna + 2] ==
+              this.tablero[fila + 3][columna + 3]
           ) {
-           // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
+            // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
             //Si entra acá es porque hay ganador
             var colorGanador = this.turno ? 'azulg' : 'rojog';
             this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila+1][columna+1] = colorGanador;
-            this.tablero[fila+2][columna+2] = colorGanador;
-            this.tablero[fila+3][columna+3] = colorGanador;
+            this.tablero[fila + 1][columna + 1] = colorGanador;
+            this.tablero[fila + 2][columna + 2] = colorGanador;
+            this.tablero[fila + 3][columna + 3] = colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
             this.juegoIniciado = false;
-          }/*
+          }
+        }
+      }
+    }
+
+    //Verifica si hay ganador diagonalmente en la otra dirección
+    for (let columna = 3; columna < this.columnas.length; columna++) {
+      for (let fila = 0; fila <= this.filasTotales - 3; fila++) {
+        // console.log('fila: ' + fila);
+        // console.log('columna: ' + columna);
+
+        if (this.tablero[fila][columna] != 'vacio') {
+          // console.log("this.tablero[fila][columna]: "+ this.tablero[fila][columna]);
           if (
-            this.tablero[fila][columna] == this.tablero[fila-1][columna+1] &&
-            this.tablero[fila-1][columna+1] == this.tablero[fila-2][columna+2] &&
-            this.tablero[fila-2][columna+2] == this.tablero[fila-3][columna+3]
+            this.tablero[fila][columna] ==
+              this.tablero[fila + 1][columna - 1] &&
+            this.tablero[fila + 1][columna - 1] ==
+              this.tablero[fila + 2][columna - 2] &&
+            this.tablero[fila + 2][columna - 2] ==
+              this.tablero[fila + 3][columna - 3]
           ) {
-           // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
+            // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
             //Si entra acá es porque hay ganador
             var colorGanador = this.turno ? 'azulg' : 'rojog';
             this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila-1][columna+1] = colorGanador;
-            this.tablero[fila-2][columna+2] = colorGanador;
-            this.tablero[fila-3][columna+3] = colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
-            this.juegoIniciado = false;
-          } */
-          if (
-            this.tablero[fila][columna] == this.tablero[fila+1][columna-1] &&
-            this.tablero[fila+1][columna-1] == this.tablero[fila+2][columna-2] &&
-            this.tablero[fila+2][columna-2] == this.tablero[fila+3][columna-3]
-          ) {
-           // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
-            //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila+1][columna-1] = colorGanador;
-            this.tablero[fila+2][columna-2] = colorGanador;
-            this.tablero[fila+3][columna-3] = colorGanador;
+            this.tablero[fila + 1][columna - 1] = colorGanador;
+            this.tablero[fila + 2][columna - 2] = colorGanador;
+            this.tablero[fila + 3][columna - 3] = colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -223,3 +225,21 @@ export class AppComponent {
       "Luego de escribir los nombres da click a 'Comenzar' para jugar.";
   }
 }
+/*
+          if (
+            this.tablero[fila][columna] == this.tablero[fila-1][columna+1] &&
+            this.tablero[fila-1][columna+1] == this.tablero[fila-2][columna+2] &&
+            this.tablero[fila-2][columna+2] == this.tablero[fila-3][columna+3]
+          ) {
+           // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
+            //Si entra acá es porque hay ganador
+            var colorGanador = this.turno ? 'azulg' : 'rojog';
+            this.tablero[fila][columna] = colorGanador;
+            this.tablero[fila-1][columna+1] = colorGanador;
+            this.tablero[fila-2][columna+2] = colorGanador;
+            this.tablero[fila-3][columna+3] = colorGanador;
+            this.mensaje =
+              'El ganador es ' +
+              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
+            this.juegoIniciado = false;
+          } */
