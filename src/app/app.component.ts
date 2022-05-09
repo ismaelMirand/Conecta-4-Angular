@@ -21,7 +21,7 @@ export class AppComponent {
   ];
 
   juegoIniciado: boolean = false;
-
+  colorGanador: string = "sinColor";
   nombreJugador1: string = 'Ignacio';
   nombreJugador2: string = 'Ismael';
 
@@ -71,11 +71,11 @@ export class AppComponent {
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila][columna+1] + "==" +  this.tablero[fila][columna+2] +"=="+ this.tablero[fila][columna+3]);
             //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila][columna + 1] = colorGanador;
-            this.tablero[fila][columna + 2] = colorGanador;
-            this.tablero[fila][columna + 3] = colorGanador;
+            this.colorGanador = this.turno ? 'azulg' : 'rojog';
+            this.tablero[fila][columna] = this.colorGanador;
+            this.tablero[fila][columna + 1] = this.colorGanador;
+            this.tablero[fila][columna + 2] = this.colorGanador;
+            this.tablero[fila][columna + 3] = this.colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -101,11 +101,11 @@ export class AppComponent {
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila][columna+1] + "==" +  this.tablero[fila][columna+2] +"=="+ this.tablero[fila][columna+3]);
             //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila + 1][columna] = colorGanador;
-            this.tablero[fila + 2][columna] = colorGanador;
-            this.tablero[fila + 3][columna] = colorGanador;
+            this.colorGanador = this.turno ? 'azulg' : 'rojog';
+            this.tablero[fila][columna] = this.colorGanador;
+            this.tablero[fila + 1][columna] = this.colorGanador;
+            this.tablero[fila + 2][columna] = this.colorGanador;
+            this.tablero[fila + 3][columna] = this.colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -132,11 +132,11 @@ export class AppComponent {
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
             //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila + 1][columna + 1] = colorGanador;
-            this.tablero[fila + 2][columna + 2] = colorGanador;
-            this.tablero[fila + 3][columna + 3] = colorGanador;
+            this.colorGanador = this.turno ? 'azulg' : 'rojog';
+            this.tablero[fila][columna] = this.colorGanador;
+            this.tablero[fila + 1][columna + 1] = this.colorGanador;
+            this.tablero[fila + 2][columna + 2] = this.colorGanador;
+            this.tablero[fila + 3][columna + 3] = this.colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -164,11 +164,11 @@ export class AppComponent {
           ) {
             // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
             //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila + 1][columna - 1] = colorGanador;
-            this.tablero[fila + 2][columna - 2] = colorGanador;
-            this.tablero[fila + 3][columna - 3] = colorGanador;
+            this.colorGanador = this.turno ? 'azulg' : 'rojog';
+            this.tablero[fila][columna] = this.colorGanador;
+            this.tablero[fila + 1][columna - 1] = this.colorGanador;
+            this.tablero[fila + 2][columna - 2] = this.colorGanador;
+            this.tablero[fila + 3][columna - 3] = this.colorGanador;
             this.mensaje =
               'El ganador es ' +
               (this.turno ? this.nombreJugador2 : this.nombreJugador1);
@@ -177,7 +177,6 @@ export class AppComponent {
         }
       }
     }
-
     return false;
   }
 
@@ -217,7 +216,8 @@ export class AppComponent {
 
       ['vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio', 'vacio'],
     ];
-
+  
+    this.colorGanador="sinColor";
     this.juegoIniciado = false;
     (<HTMLInputElement>document.getElementById('nJugador1')).value = '';
     (<HTMLInputElement>document.getElementById('nJugador2')).value = '';

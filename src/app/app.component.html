@@ -80,7 +80,10 @@
       <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
       <h2>Mensajes:</h2>
       <div id="contenedor-mensaje">
-        <p><b>{{mensaje}}</b></p>
+        <!-- <p><b>{{mensaje}}</b></p> -->
+        <p *ngIf="colorGanador=='sinColor'"><b>{{mensaje}}</b></p>
+        <p *ngIf="colorGanador=='rojog'" class="projo"><b>{{mensaje}}</b></p>
+        <p *ngIf="colorGanador=='azulg'"class="pazul"><b>{{mensaje}}</b></p>
       </div>
       <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
     </div>
