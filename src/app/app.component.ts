@@ -76,9 +76,8 @@ export class AppComponent {
             this.tablero[fila][columna + 1] = this.colorGanador;
             this.tablero[fila][columna + 2] = this.colorGanador;
             this.tablero[fila][columna + 3] = this.colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
+            this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
+              ' ganaste esta partida!';
             this.juegoIniciado = false;
           }
         }
@@ -106,9 +105,8 @@ export class AppComponent {
             this.tablero[fila + 1][columna] = this.colorGanador;
             this.tablero[fila + 2][columna] = this.colorGanador;
             this.tablero[fila + 3][columna] = this.colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
+            this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
+              ' ganaste esta partida!';
             this.juegoIniciado = false;
           }
         }
@@ -137,9 +135,8 @@ export class AppComponent {
             this.tablero[fila + 1][columna + 1] = this.colorGanador;
             this.tablero[fila + 2][columna + 2] = this.colorGanador;
             this.tablero[fila + 3][columna + 3] = this.colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
+            this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
+              ' ganaste esta partida!';
             this.juegoIniciado = false;
           }
         }
@@ -169,9 +166,8 @@ export class AppComponent {
             this.tablero[fila + 1][columna - 1] = this.colorGanador;
             this.tablero[fila + 2][columna - 2] = this.colorGanador;
             this.tablero[fila + 3][columna - 3] = this.colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
+            this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
+              ' ganaste esta partida!';
             this.juegoIniciado = false;
           }
         }
