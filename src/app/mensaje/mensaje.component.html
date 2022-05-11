@@ -1,8 +1,7 @@
 <div id="contenedor-mensaje" [ngSwitch]="colorDelTexto">
-
-    <p *ngSwitchCase="'sinColor'"><b>{{mensajeRecivido}}</b></p>
-    <p *ngSwitchCase="'rojog'" class="projo"><b>{{mensajeRecivido}}</b></p>
-    <p *ngSwitchCase="'azulg'" class="pazul"><b>{{mensajeRecivido}}</b></p>
-    
+    <!-- Se mostrará el p correspondiente según el color enviado -->
+    <p *ngIf="colorDelTexto=='rojog'" class="projo"><b>{{mensajeRecibido}}</b></p>
+    <p *ngIf="colorDelTexto=='azulg'" class="pazul"><b>{{mensajeRecibido}}</b></p>
+    <p *ngIf="colorDelTexto=='sinColor'"><b>{{mensajeRecibido}}</b></p> 
 </div>
 

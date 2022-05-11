@@ -1,5 +1,8 @@
-<div *ngIf="colorFicha=='vacio'" class="vacio"></div>
-<div *ngIf="colorFicha=='rojo'" class="rojo"></div>
-<div *ngIf="colorFicha=='azul'" class="azul"></div>
-<div *ngIf="colorFicha=='azulg'" class="azul-gana"></div>
-<div *ngIf="colorFicha=='rojog'" class="rojo-gana"></div>
+<div [ngSwitch]="colorFicha">
+    <!-- La ficha tendrá el color según el color enviado -->
+  <div *ngSwitchCase="'rojo'"  class="rojo"></div>
+  <div *ngSwitchCase="'azul'"  class="azul"></div>
+  <div *ngSwitchCase="'azulg'" class="azul-gana"></div>
+  <div *ngSwitchCase="'rojog'" class="rojo-gana"></div>
+  <div *ngSwitchDefault="'vacio'" class="vacio"></div>
+</div>

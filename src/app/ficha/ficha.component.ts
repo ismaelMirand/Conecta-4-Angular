@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./ficha.component.css']
 })
 export class FichaComponent implements OnInit {
-  @Input('color') public colorFicha: string="vacio";
+  
+  // Recibimos de qué color es la ficha que se quiere 
+  @Input('color') public colorFicha: string="";
+
   constructor() { }
 
   ngOnInit(): void {

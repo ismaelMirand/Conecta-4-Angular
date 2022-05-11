@@ -3,46 +3,11 @@ tbody{
     border: 1px solid black;
  
 }
-.rojo{
-    background-color: rgb(255, 0, 0);
-    width: 78px;
-    height: 78px;
-    border: 2px solid black;
-    margin: 5px;
-    border-radius: 50%;
-}
-.azul{
-    background-color: blue;
-    width: 78px;
-    height: 78px;
-    border: 2px solid black;
-    margin: 5px;
-    border-radius: 50%;
-}
+
 .btn-primary{
     width: 60px;
     margin-left: 10px;
 }
-
-
-.rojo-gana{
-    background-color: rgb(255, 0, 0);
-    width: 78px;
-    height: 78px;
-    margin: 5px;
-    border: 5px solid yellow;
-    border-radius: 50%;
-}
-
-.azul-gana{
-    background-color: blue;
-    width: 78px;
-    height: 78px;
-    margin: 5px;
-    border: 5px solid yellow;
-    border-radius: 50%;
-}
-
 
 .contenedor-botones{
     border: 1px solid black; padding: 25px;
@@ -65,7 +30,7 @@ tbody{
 }
 #fichaAzul{
     width: 30px; height: 30px; margin: 0px;
-    background-color: blue;
+    background-color: #0000ff;
     border: 2px solid black;
     border-radius: 50%;
 }
