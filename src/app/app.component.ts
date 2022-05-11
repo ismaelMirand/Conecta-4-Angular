@@ -21,6 +21,7 @@ export class AppComponent {
   ];
 
   juegoIniciado: boolean = false;
+  juegoTerminado: boolean= false;
   colorGanador: string = "sinColor";
   nombreJugador1: string = 'Ignacio';
   nombreJugador2: string = 'Ismael';
@@ -79,6 +80,7 @@ export class AppComponent {
             this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
               ' ganaste esta partida!';
             this.juegoIniciado = false;
+            this.juegoTerminado = true; 
           }
         }
       }
@@ -108,6 +110,7 @@ export class AppComponent {
             this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
               ' ganaste esta partida!';
             this.juegoIniciado = false;
+            this.juegoTerminado = true; 
           }
         }
       }
@@ -138,6 +141,7 @@ export class AppComponent {
             this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
               ' ganaste esta partida!';
             this.juegoIniciado = false;
+            this.juegoTerminado = true; 
           }
         }
       }
@@ -169,6 +173,7 @@ export class AppComponent {
             this.mensaje =(this.turno ? this.nombreJugador2 : this.nombreJugador1)+
               ' ganaste esta partida!';
             this.juegoIniciado = false;
+            this.juegoTerminado = true; 
           }
         }
       }
@@ -177,9 +182,11 @@ export class AppComponent {
   }
 
   comenzarJuego() {
+    
     if (
       (<HTMLInputElement>document.getElementById('nJugador1')).value != '' &&
-      (<HTMLInputElement>document.getElementById('nJugador2')).value != ''
+      (<HTMLInputElement>document.getElementById('nJugador2')).value != '' &&
+        this.juegoTerminado==false
     ) {
       this.juegoIniciado = true;
       this.turno = Math.round(Math.random() * 1) == 1 ? true : false;
@@ -193,9 +200,14 @@ export class AppComponent {
         'Jugador ' +
         (this.turno ? this.nombreJugador1 : this.nombreJugador2) +
         ' es tu turno.';
-    } else {
+      } else {
       this.mensaje = 'Ingrese los nombres antes de comenzar!';
     }
+
+      if(this.juegoTerminado==true){
+        this.mensaje = 'Inicie un nuevo juego por favor!'
+      }
+     
   }
 
   nuevoJuego(): void {
@@ -219,6 +231,7 @@ export class AppComponent {
     (<HTMLInputElement>document.getElementById('nJugador2')).value = '';
     this.mensaje =
       "Luego de escribir los nombres da click a 'Comenzar' para jugar.";
+    this.juegoTerminado=false;
   }
 }
 /*
