@@ -4,16 +4,10 @@ header{
 tbody{
     background-color: rgb(137, 137, 137);
     border: 1px solid black;
+ 
 }
 
-.vacio{
-    background-color: rgb(255, 255, 255);
-    width: 78px;
-    height: 78px;
-    border: 2px solid black;
-    margin: 5px;
-    border-radius: 50%;
-}
+
 .rojo{
     background-color: rgb(255, 0, 0);
     width: 78px;
@@ -60,9 +54,6 @@ tbody{
 .contenedor-botones{
     border: 1px solid black; padding: 25px;
 }
-#contenedor-mensaje{
-    padding: 50px; border: 1px solid black;
-}
 #botonIzquierdo{
     float: right; background-color: #0d6efd;
 }
@@ -108,16 +99,4 @@ footer{
 }
 table{
     margin-left: 60px;
-}
-p{
-    font-size: 20px;
-}
-
-.projo{
-    font-size: 20px;
-    color:red;
-}
-.pazul{
-    font-size: 20px;
-    color: blue;
 }

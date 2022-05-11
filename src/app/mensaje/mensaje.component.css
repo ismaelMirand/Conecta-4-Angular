@@ -1,0 +1,15 @@
+#contenedor-mensaje{
+    padding: 50px; border: 1px solid black;
+}
+p{
+    font-size: 20px;
+}
+
+.projo{
+    font-size: 20px;
+    color:red;
+}
+.pazul{
+    font-size: 20px;
+    color: blue;
+}

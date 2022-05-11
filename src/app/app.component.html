@@ -79,12 +79,7 @@
 
       <!-- MENSAJE Y RECUADRO PARA MENSAJES -->
       <h2>Mensajes:</h2>
-      <div id="contenedor-mensaje">
-        <!-- <p><b>{{mensaje}}</b></p> -->
-        <p *ngIf="colorGanador=='sinColor'"><b>{{mensaje}}</b></p>
-        <p *ngIf="colorGanador=='rojog'" class="projo"><b>{{mensaje}}</b></p>
-        <p *ngIf="colorGanador=='azulg'"class="pazul"><b>{{mensaje}}</b></p>
-      </div>
+      <app-mensaje [mensaje]="mensaje" [colorTexto]="colorGanador"></app-mensaje>
       <!-- FIN MENSAJE Y RECUADRO PARA MENSAJES -->
     </div>
     <!-- FIN PARTE IZQUIERDA -->
@@ -107,15 +102,11 @@
         <tbody>
           <tr *ngFor="let f of filas">
             <td *ngFor="let c of columnas">
-              <div *ngIf="tablero[f][c]=='vacio'" class="vacio"></div>
-              <div *ngIf="tablero[f][c]=='rojo'" class="rojo"></div>
-              <div *ngIf="tablero[f][c]=='azul'" class="azul"></div>
-              <div *ngIf="tablero[f][c]=='azulg'" class="azul-gana"></div>
-              <div *ngIf="tablero[f][c]=='rojog'" class="rojo-gana"></div>
+              <app-ficha [color]="tablero[f][c]"></app-ficha>
             </td>
           </tr>
         </tbody>
-        <!-- FIN TABLERO -->
+        <!-- FIN TABLEROS -->
       </table>
     </div>
   </div>
