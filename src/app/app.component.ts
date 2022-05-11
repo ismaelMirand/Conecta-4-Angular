@@ -186,7 +186,9 @@ export class AppComponent {
     if (
       (<HTMLInputElement>document.getElementById('nJugador1')).value != '' &&
       (<HTMLInputElement>document.getElementById('nJugador2')).value != '' &&
-        this.juegoTerminado==false
+        this.juegoTerminado==false &&
+        (<HTMLInputElement>document.getElementById('nJugador1')).value != (<HTMLInputElement>document.getElementById('nJugador2')).value
+        
     ) {
       this.juegoIniciado = true;
       this.turno = Math.round(Math.random() * 1) == 1 ? true : false;
@@ -200,7 +202,9 @@ export class AppComponent {
         'Jugador ' +
         (this.turno ? this.nombreJugador1 : this.nombreJugador2) +
         ' es tu turno.';
-      } else {
+      } else if((<HTMLInputElement>document.getElementById('nJugador1')).value == (<HTMLInputElement>document.getElementById('nJugador2')).value){
+        this.mensaje = 'Los nombres no pueden ser el mismo!';
+      }else {
       this.mensaje = 'Ingrese los nombres antes de comenzar!';
     }
 
@@ -234,21 +238,4 @@ export class AppComponent {
     this.juegoTerminado=false;
   }
 }
-/*
-          if (
-            this.tablero[fila][columna] == this.tablero[fila-1][columna+1] &&
-            this.tablero[fila-1][columna+1] == this.tablero[fila-2][columna+2] &&
-            this.tablero[fila-2][columna+2] == this.tablero[fila-3][columna+3]
-          ) {
-           // console.log(this.tablero[fila][columna] + "==" +  this.tablero[fila+1][columna+1] + "==" +  this.tablero[fila+2][columna+2] +"=="+ this.tablero[fila+3][columna+3]);
-            //Si entra acá es porque hay ganador
-            var colorGanador = this.turno ? 'azulg' : 'rojog';
-            this.tablero[fila][columna] = colorGanador;
-            this.tablero[fila-1][columna+1] = colorGanador;
-            this.tablero[fila-2][columna+2] = colorGanador;
-            this.tablero[fila-3][columna+3] = colorGanador;
-            this.mensaje =
-              'El ganador es ' +
-              (this.turno ? this.nombreJugador2 : this.nombreJugador1);
-            this.juegoIniciado = false;
-          } */
+
