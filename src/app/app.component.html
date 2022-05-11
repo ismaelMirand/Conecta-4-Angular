@@ -11,29 +11,12 @@
 <!-- BODY -->
 <body class="container">
 
-  <header>
-    <!-- HEADER -->
-    <div class="container" id="contenedor-header">
-      <div class="row">
-        <div class="col-4">
-          <img src="assets/logo.png" class="imagenIzquierda" alt="">
-        </div>
-        <div class="col-4">
-          <h1 style="text-align:center; padding-top: 10px;"> Juego Conecta 4</h1>
-        </div>
-        <div class="col-4">
-          <img src="assets/logo.png" class="imagenDerecha" alt="">
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- FIN HEADER -->
+  <app-header-simple [titulo]="'Juego Conecta 4'" [imagen]="'assets/logo.png'"></app-header-simple>
 
   <div class="row">
 
-
     <!-- PARTE IZQUIERDA -->
-    <div class="col-5">
+    <div class="col-6">
       <!-- RECUADRO CON BOTONES Y JUGADORES -->
       <div class="contenedor-botones">
         <!-- BOTONES -->
@@ -84,7 +67,7 @@
     <!-- FIN PARTE IZQUIERDA -->
 
     <!-- PARTE DERECHA -->
-    <div class="col-7">
+    <div class="col-6">
       <table>
         <thead>
           <tr>

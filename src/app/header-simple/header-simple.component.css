@@ -1,0 +1,17 @@
+#contenedor-header{
+    border: 1px solid black; margin-bottom: 30px;
+}
+.imagenIzquierda{
+    float: left;
+}
+.imagenDerecha{
+    float: right;
+}
+img{
+    width: 100px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+header{
+    padding-top: 40px;
+}
